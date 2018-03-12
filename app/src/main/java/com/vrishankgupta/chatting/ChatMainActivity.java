@@ -97,7 +97,7 @@ public class ChatMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(emojiconEditText.getText().toString(),
-                        FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
+                        FirebaseAuth.getInstance().getCurrentUser().getEmail()));
                 emojiconEditText.setText("");
                 emojiconEditText.requestFocus();
                 listOfMessage.setAdapter(adapter);
@@ -144,8 +144,7 @@ public class ChatMainActivity extends AppCompatActivity {
             public View getView(int position, View view, ViewGroup viewGroup) {
                 ChatMessage chatMessage = getItem(position);
 
-                if(chatMessage.getMessageUser().equals(FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
-                      || chatMessage.getMessageUser().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail()) )
+                if(FirebaseAuth.getInstance().getCurrentUser().getEmail().equals(chatMessage.getMessageUser()))
                 {
                     view = getLayoutInflater().inflate(R.layout.msg_in,viewGroup,false);
                 }
