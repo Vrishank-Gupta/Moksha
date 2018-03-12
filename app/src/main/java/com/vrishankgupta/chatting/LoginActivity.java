@@ -50,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
             {
                 Snackbar.make(activity_login,"Successfully signed in.Welcome!", Snackbar.LENGTH_SHORT).show();
                 startActivity(new Intent(LoginActivity.this,ChatMainActivity.class));
+                finish();
             }
             else{
                 Snackbar.make(activity_login,"We couldn't sign you in.Please try again later", Snackbar.LENGTH_SHORT).show();
@@ -90,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                     Snackbar.make(activity_login,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
                     //Load content
                     startActivity(new Intent(LoginActivity.this,ChatMainActivity.class));
+                    finish();
                 }
             }
         });

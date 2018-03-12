@@ -97,6 +97,7 @@ public class ChatMainActivity extends AppCompatActivity {
                         FirebaseAuth.getInstance().getCurrentUser().getEmail()));
                 emojiconEditText.setText("");
                 emojiconEditText.requestFocus();
+//                listOfMessage.setSelection(adapter.getCount()-1);
             }
         });
 
@@ -119,7 +120,7 @@ public class ChatMainActivity extends AppCompatActivity {
 
     private void displayChatMessage() {
 
-        ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
+        final ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
         adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference())
         {
             @Override
@@ -134,7 +135,6 @@ public class ChatMainActivity extends AppCompatActivity {
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
-
             }
         };
         listOfMessage.setAdapter(adapter);
