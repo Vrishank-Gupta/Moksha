@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
+    android:background="@drawable/chat_back"
+    android:padding="0dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".ChatMainActivity">
+
 
     <ImageView
         android:id="@+id/emoji_button"
         android:padding="4dp"
-        android:src="@drawable/smiley"
+        android:src="@drawable/ic_smiley"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_width="40dp"
@@ -20,7 +22,7 @@
     <ImageView
         android:id="@+id/submit_button"
         android:padding="4dp"
-        android:src="@android:drawable/ic_menu_send"
+        android:src="@drawable/ic_chat_send"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_width="40dp"
@@ -32,6 +34,10 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/emoji_button"
         android:layout_toLeftOf="@+id/submit_button"
+        android:textColor="@color/black"
+        android:textColorLink="@color/black"
+        android:textColorHint="@color/black"
+        android:shadowColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:emojiconSize="28sp"
@@ -40,11 +46,12 @@
     <ListView
         android:id="@+id/list_of_message"
         android:layout_alignParentTop="true"
+        tools:listitem="@layout/msg_out"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/emojicon_edit_text"
-        android:dividerHeight="16dp"
+        android:dividerHeight="5dp"
         android:divider="@android:color/transparent"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="0dp"
         android:layout_width="match_parent"
         android:stackFromBottom="true"
         android:layout_height="match_parent"/>

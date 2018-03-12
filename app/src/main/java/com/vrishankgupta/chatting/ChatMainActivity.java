@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -31,6 +32,8 @@ public class ChatMainActivity extends AppCompatActivity {
     private static int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
     RelativeLayout activity_main;
+    ListView listOfMessage;
+
 
     //Add Emojicon
     EmojiconEditText emojiconEditText;
@@ -94,10 +97,11 @@ public class ChatMainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(emojiconEditText.getText().toString(),
-                        FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                        FirebaseAuth.getInstance().getCurrentUser().getDisplayName()));
                 emojiconEditText.setText("");
                 emojiconEditText.requestFocus();
-//                listOfMessage.setSelection(adapter.getCount()-1);
+                listOfMessage.setAdapter(adapter);
+
             }
         });
 
@@ -111,6 +115,7 @@ public class ChatMainActivity extends AppCompatActivity {
             Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
             //Load content
             displayChatMessage();
+
         }
 
 
@@ -120,23 +125,54 @@ public class ChatMainActivity extends AppCompatActivity {
 
     private void displayChatMessage() {
 
-        final ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
-        adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference())
+        listOfMessage = (ListView)findViewById(R.id.list_of_message);
+        adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.msg_out,FirebaseDatabase.getInstance().getReference())
         {
+
+
+            @Override
+            public int getViewTypeCount() {
+                return 2;
+            }
+
+            @Override
+            public int getItemViewType(int position) {
+                return position%2;
+            }
+
+            @Override
+            public View getView(int position, View view, ViewGroup viewGroup) {
+                ChatMessage chatMessage = getItem(position);
+
+                if(chatMessage.getMessageUser().equals(FirebaseAuth.getInstance().getCurrentUser().getDisplayName())
+                      || chatMessage.getMessageUser().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail()) )
+                {
+                    view = getLayoutInflater().inflate(R.layout.msg_in,viewGroup,false);
+                }
+                else
+                    view = getLayoutInflater().inflate(R.layout.msg_out,viewGroup,false);
+                populateView(view,chatMessage,position);
+                return view;
+            }
+
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
 
-                //Get references to the views of list_item.xml
-                TextView messageText, messageUser, messageTime;
-                messageText = (EmojiconTextView) v.findViewById(R.id.message_text);
-                messageUser = (TextView) v.findViewById(R.id.message_user);
-                messageTime = (TextView) v.findViewById(R.id.message_time);
+
+                //Get references to the views of msg_out.xml               TextView messageText, messageUser, messageTime;
+                TextView messageText = (EmojiconTextView) v.findViewById(R.id.message_text);
+                TextView messageUser = (TextView) v.findViewById(R.id.message_user);
+                TextView messageTime = (TextView) v.findViewById(R.id.message_time);
+
 
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
             }
+
+
         };
+
         listOfMessage.setAdapter(adapter);
     }
 }
