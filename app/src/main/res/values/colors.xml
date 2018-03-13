@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#40a6ff</color>
+    <color name="colorAccent">#000000</color>
     <color name="top_bar_background">#EBF1DE</color>
     <color name="top_bar_text_color">#D52736</color>
     <color name="app_background">#EEEEEE</color>
@@ -14,4 +14,5 @@
     <color name="white">#FFFFFF</color>
     <color name="cardColor">#b1a9a9</color>
     <color name="black">#000</color>
+    <color name="send_msg">#E1FFC7</color>
 </resources>

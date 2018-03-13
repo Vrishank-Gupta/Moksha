@@ -1,5 +1,6 @@
 package com.vrishankgupta.chatting;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -11,16 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.text.format.DateFormat;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.vrishankgupta.chatting.util.ChatMessage;
 
 import hani.momanii.supernova_emoji_library.Actions.EmojIconActions;
@@ -33,6 +39,7 @@ public class ChatMainActivity extends AppCompatActivity {
     private FirebaseListAdapter<ChatMessage> adapter;
     RelativeLayout activity_main;
     ListView listOfMessage;
+    ProgressDialog dialog;
 
 
     //Add Emojicon
@@ -96,11 +103,21 @@ public class ChatMainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(emojiconEditText.getText().toString(),
-                        FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-                emojiconEditText.setText("");
-                emojiconEditText.requestFocus();
-                listOfMessage.setAdapter(adapter);
+                
+                if(emojiconEditText.getText().toString().equals(""))
+                {
+                    Toast.makeText(ChatMainActivity.this, "Enter Some message", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+
+                    FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(emojiconEditText.getText().toString(),
+                            FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                    emojiconEditText.setText("");
+                    emojiconEditText.requestFocus();
+                    listOfMessage.setAdapter(adapter);
+                    listOfMessage.setSelection(adapter.getCount());
+                }
 
             }
         });
@@ -114,11 +131,16 @@ public class ChatMainActivity extends AppCompatActivity {
         {
             Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
             //Load content
+            dialog = new ProgressDialog(this);
+            dialog.setCancelable(true);
+            dialog.setMessage("Loading");
+            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setMax(100);
+            dialog.setProgress(0);
+            dialog.show();
             displayChatMessage();
 
         }
-
-
     }
 
 
@@ -126,7 +148,7 @@ public class ChatMainActivity extends AppCompatActivity {
     private void displayChatMessage() {
 
         listOfMessage = (ListView)findViewById(R.id.list_of_message);
-        adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.msg_out,FirebaseDatabase.getInstance().getReference())
+        adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.msg_inbox,FirebaseDatabase.getInstance().getReference())
         {
 
 
@@ -146,10 +168,10 @@ public class ChatMainActivity extends AppCompatActivity {
 
                 if(FirebaseAuth.getInstance().getCurrentUser().getEmail().equals(chatMessage.getMessageUser()))
                 {
-                    view = getLayoutInflater().inflate(R.layout.msg_in,viewGroup,false);
+                    view = getLayoutInflater().inflate(R.layout.msg_outbox,viewGroup,false);
                 }
                 else
-                    view = getLayoutInflater().inflate(R.layout.msg_out,viewGroup,false);
+                    view = getLayoutInflater().inflate(R.layout.msg_inbox,viewGroup,false);
                 populateView(view,chatMessage,position);
                 return view;
             }
@@ -158,7 +180,6 @@ public class ChatMainActivity extends AppCompatActivity {
             protected void populateView(View v, ChatMessage model, int position) {
 
 
-                //Get references to the views of msg_out.xml               TextView messageText, messageUser, messageTime;
                 TextView messageText = (EmojiconTextView) v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView) v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView) v.findViewById(R.id.message_time);
@@ -167,11 +188,15 @@ public class ChatMainActivity extends AppCompatActivity {
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
+
             }
+
+
 
 
         };
 
         listOfMessage.setAdapter(adapter);
+        dialog.dismiss();
     }
 }
