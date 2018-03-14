@@ -10,6 +10,7 @@ public class ChatMessage {
     private String messageText;
     private String messageUser;
     private long messageTime;
+    private String userPic;
 
     public ChatMessage(String messageText, String messageUser) {
         this.messageText = messageText;
@@ -44,4 +45,5 @@ public class ChatMessage {
     public void setMessageTime(long messageTime) {
         this.messageTime = messageTime;
     }
+
 }

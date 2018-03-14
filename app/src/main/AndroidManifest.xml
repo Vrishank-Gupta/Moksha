@@ -11,12 +11,32 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".LoginActivity">
+
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".eventsactivities.dance" />
+        <activity android:name=".eventsactivities.theatrecodramatics" />
+        <activity android:name=".eventsactivities.informals" />
+        <activity android:name=".eventsactivities.music" />
+        <activity android:name=".eventsactivities.talentshow" />
+        <activity android:name=".eventsactivities.gaming" />
+        <activity android:name=".eventsactivities.automobile" />
+        <activity android:name=".eventsactivities.literary"></activity>
     </application>
 
 </manifest>

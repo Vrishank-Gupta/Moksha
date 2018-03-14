@@ -20,7 +20,6 @@ import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 public class LoginActivity extends AppCompatActivity {
 
-    LinearLayout btnAadhar;
     GoogleSignInButton btnGoogle;
     RelativeLayout activity_login;
     private static int SIGN_IN_REQUEST_CODE = 1;
@@ -49,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK)
             {
                 Snackbar.make(activity_login,"Successfully signed in.Welcome!", Snackbar.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this,ChatMainActivity.class));
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 finish();
             }
             else{
@@ -62,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_main2,menu);
         return true;
     }
 
@@ -72,7 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        btnAadhar = (LinearLayout) findViewById(R.id.btnAadhar);
         btnGoogle = (GoogleSignInButton) findViewById(R.id.btnGoogleLogin);
         activity_login = (RelativeLayout)findViewById(R.id.activity_login);
 
@@ -90,22 +88,11 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Snackbar.make(activity_login,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
                     //Load content
-                    startActivity(new Intent(LoginActivity.this,ChatMainActivity.class));
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     finish();
                 }
             }
         });
-
-//        btnAadhar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                startActivity(new Intent(LoginActivity.this,AadharHomeActivity.class));
-//
-//            }
-//        });
-
-
 
     }
 }

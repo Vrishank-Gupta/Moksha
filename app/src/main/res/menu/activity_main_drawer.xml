@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ABOUT"
+            android:icon="@drawable/itemlogo"
+            android:title="ABOUT" />
+        <item
+            android:id="@+id/EVENTS"
+            android:icon="@drawable/itemlogo"
+            android:title="EVENTS" />
+        <item
+            android:id="@+id/NEWSFEED"
+            android:icon="@drawable/itemlogo"
+            android:title="NEWSFEED" />
+        <item
+            android:id="@+id/CHATROOM"
+            android:icon="@drawable/itemlogo"
+            android:title="CHAT ROOM" />
+        <item
+            android:id="@+id/DIRECTIONS"
+            android:icon="@drawable/itemlogo"
+            android:title="DIRECTIONS" />
+        <item
+            android:id="@+id/MOKSHAMAP"
+            android:icon="@drawable/itemlogo"
+            android:title="MOKSHA MAP" />
+        <item
+            android:id="@+id/SPONSORS"
+            android:icon="@drawable/itemlogo"
+            android:title="SPONSORS" />
+        <item
+            android:id="@+id/TEAM"
+            android:icon="@drawable/itemlogo"
+            android:title="TEAM " />
+        <item
+            android:id="@+id/CONTACTUS"
+            android:icon="@drawable/itemlogo"
+            android:title="CONTACT US" />
+        <item
+            android:id="@+id/signout"
+            android:icon="@drawable/itemlogo"
+            android:title="SIGN OUT" />
+    </group>
+
+
+</menu>

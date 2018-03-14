@@ -1,21 +1,23 @@
 package com.vrishankgupta.chatting;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.text.format.DateFormat;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
@@ -25,7 +27,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.vrishankgupta.chatting.util.ChatMessage;
 
@@ -39,13 +43,14 @@ public class ChatMainActivity extends AppCompatActivity {
     private FirebaseListAdapter<ChatMessage> adapter;
     RelativeLayout activity_main;
     ListView listOfMessage;
-    ProgressDialog dialog;
-
+    ProgressBar bar;
+    CardView cardView;
 
     //Add Emojicon
     EmojiconEditText emojiconEditText;
     ImageView emojiButton,submitButton;
     EmojIconActions emojIconActions;
+    public static final String TAG = "HOLA";
 
 
     @Override
@@ -65,7 +70,7 @@ public class ChatMainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu,menu);
+        getMenuInflater().inflate(R.menu.menu_main2,menu);
         return true;
     }
 
@@ -89,11 +94,14 @@ public class ChatMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_chat);
 
+        bar = (ProgressBar) findViewById(R.id.progressBar);
+        bar.setVisibility(View.VISIBLE);
+
+        cardView = (CardView) findViewById(R.id.msgCard);
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
 
-        //Add Emoji
         emojiButton = (ImageView)findViewById(R.id.emoji_button);
         submitButton = (ImageView)findViewById(R.id.submit_button);
         emojiconEditText = (EmojiconEditText)findViewById(R.id.emojicon_edit_text);
@@ -122,7 +130,8 @@ public class ChatMainActivity extends AppCompatActivity {
             }
         });
 
-        //Check if not sign-in then navigate Signin page
+
+
         if(FirebaseAuth.getInstance().getCurrentUser() == null)
         {
             startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
@@ -130,14 +139,6 @@ public class ChatMainActivity extends AppCompatActivity {
         else
         {
             Snackbar.make(activity_main,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
-            //Load content
-            dialog = new ProgressDialog(this);
-            dialog.setCancelable(true);
-            dialog.setMessage("Loading");
-            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            dialog.setMax(100);
-            dialog.setProgress(0);
-            dialog.show();
             displayChatMessage();
 
         }
@@ -150,7 +151,6 @@ public class ChatMainActivity extends AppCompatActivity {
         listOfMessage = (ListView)findViewById(R.id.list_of_message);
         adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.msg_inbox,FirebaseDatabase.getInstance().getReference())
         {
-
 
             @Override
             public int getViewTypeCount() {
@@ -178,8 +178,6 @@ public class ChatMainActivity extends AppCompatActivity {
 
             @Override
             protected void populateView(View v, ChatMessage model, int position) {
-
-
                 TextView messageText = (EmojiconTextView) v.findViewById(R.id.message_text);
                 TextView messageUser = (TextView) v.findViewById(R.id.message_user);
                 TextView messageTime = (TextView) v.findViewById(R.id.message_time);
@@ -188,15 +186,10 @@ public class ChatMainActivity extends AppCompatActivity {
                 messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
-
+                bar.setVisibility(View.INVISIBLE);
             }
-
-
-
-
         };
 
         listOfMessage.setAdapter(adapter);
-        dialog.dismiss();
     }
 }
