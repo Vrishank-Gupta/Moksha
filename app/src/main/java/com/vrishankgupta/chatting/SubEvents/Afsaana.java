@@ -32,7 +32,7 @@ public class Afsaana extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
+                String a = "https://chaitanya49.typeform.com/to/E9NbbD?typeform-embed=embed-widget";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

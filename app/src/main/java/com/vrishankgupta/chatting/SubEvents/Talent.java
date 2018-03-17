@@ -29,7 +29,7 @@ public class Talent extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
+                String a = "https://shubhampriyadarshi37.typeform.com/to/wCqVUx?typeform-embed=embed-widget";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

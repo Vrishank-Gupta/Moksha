@@ -30,7 +30,7 @@ public class Brahmastra extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
+                String a = "https://chaitanya49.typeform.com/to/DmImkm?typeform-embed=embed-widget";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

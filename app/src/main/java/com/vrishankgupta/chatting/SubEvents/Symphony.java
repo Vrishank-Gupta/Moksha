@@ -29,7 +29,7 @@ public class Symphony extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
+                String a = "https://arush5.typeform.com/to/Khf9P9?typeform-embed=embed-widget";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);
