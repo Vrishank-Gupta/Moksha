@@ -28,7 +28,7 @@ public class explode extends AppCompatActivity {
         l= (ImageView) findViewById(R.id.nsitfirst);
         fl= (FrameLayout) findViewById(R.id.first);
 
-rl= (RelativeLayout) findViewById(R.id.relative);
+        rl= (RelativeLayout) findViewById(R.id.relative);
 
         k.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -173,7 +173,7 @@ rl= (RelativeLayout) findViewById(R.id.relative);
                 j.performClick();
 rl.performClick();
             }
-        }, 3500);
+        }, 4000);
 
 
 
@@ -192,7 +192,7 @@ rl.performClick();
             public void run() {
                startActivity(new Intent(explode.this,HomeActivity.class));
             }
-        }, 4500);
+        }, 5000);
 
 
     }

@@ -8,6 +8,33 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/front_arrow"
+            android:layout_below="@+id/front_arrow"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/back_arrow"
+            android:layout_below="@+id/back_arrow"
+            android:text="Previous"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView"
+            android:layout_alignStart="@+id/sign_out_icon"
+            android:text="Sign Out"
+            android:textColor="@color/white"
+            android:textSize="8sp"
+            android:id="@+id/textView2" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -23,9 +50,8 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_alignEnd="@+id/melody"
+            android:layout_alignEnd="@+id/textView2"
             android:layout_below="@+id/sign_out_icon"
-            android:layout_marginEnd="20dp"
             android:src="@drawable/moksha_logo" />
 
         <ImageView
@@ -67,9 +93,9 @@
             android:id="@+id/back_arrow"
             android:layout_width="70dp"
             android:layout_height="35dp"
+            android:layout_alignStart="@+id/voice"
             android:layout_alignTop="@+id/imageView3"
-            android:layout_marginStart="19dp"
-            android:layout_toEndOf="@+id/nav_icon"
+            android:layout_marginStart="14dp"
             android:src="@drawable/back_arrow_bold" />
 
 
@@ -127,7 +153,7 @@
             android:layout_below="@id/symphony"
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="0dp"
             android:src="@drawable/tarang" />
 
 

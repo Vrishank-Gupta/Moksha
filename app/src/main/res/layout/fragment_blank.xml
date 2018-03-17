@@ -61,7 +61,7 @@
                     android:id="@+id/linear_layout_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/black"
+                    android:background="@android:color/white"
                     android:visibility="visible">
 
                     <LinearLayout
@@ -76,7 +76,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Days"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -103,7 +103,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -113,7 +113,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Hour"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -140,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Minute"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -157,7 +157,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -167,7 +167,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Second"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/colorPrimary"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>

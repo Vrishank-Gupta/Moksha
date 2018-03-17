@@ -29,7 +29,7 @@ public class Khayaal extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "";
+                String a = "http://nsitmoksha.com";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

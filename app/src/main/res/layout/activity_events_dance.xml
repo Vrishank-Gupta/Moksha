@@ -9,6 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/front_arrow"
+            android:layout_below="@+id/front_arrow"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="300dp"
@@ -18,6 +27,14 @@
             android:layout_marginEnd="110dp"
             android:layout_marginTop="56dp"
             android:src="@drawable/events_head" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/imageView"
+            android:layout_alignStart="@+id/sign_out_icon"
+            android:text="Sign Out"
+            android:textColor="@color/white"
+            android:textSize="8sp" />
 
         <ImageView
             android:id="@+id/imageView"
