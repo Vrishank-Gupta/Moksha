@@ -4,7 +4,12 @@
     <item
         android:id="@+id/home"
         android:orderInCategory="100"
-        android:icon="@android:drawable/ic_dialog_dialer"
-        app:showAsAction="always"
-        android:title="home" />
+        android:title="HOME"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="SIGNOUT"
+        app:showAsAction="never" />
 </menu>

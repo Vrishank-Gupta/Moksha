@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK)
             {
                 Snackbar.make(activity_login,"Successfully signed in.Welcome!", Snackbar.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                 finish();
             }
             else{
@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
 
         btnGoogle = (GoogleSignInButton) findViewById(R.id.btnGoogleLogin);
         activity_login = (RelativeLayout)findViewById(R.id.activity_login);
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     Snackbar.make(activity_login,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
                     //Load content
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     finish();
                 }
             }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e253e">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/home_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/home_icon" />
+
+        <ImageView
+            android:id="@+id/sign_out_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_alignBottom="@+id/home_icon"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/sign_out" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:padding="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Querencia"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:text="Shatranj, the Chess Club of NSIT in association with Venatus presents QUERENCIA. A one of a kind blitz tournament that gives everybody a chance to show their intellectual prowess. Join us on March 15 at 10 am to participate."
+                android:textColor="@color/subtext_color"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+
+                />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Contact for Queries:"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sub_background"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:textColor="@color/subtext_color"
+                android:text="Karan - 7042049400\nKrish - 9810462363"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:padding="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:text="Time : 3:00Pm - 6:00Pm\nDate :28th March 2018\nVenue : Main Stage"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:id="@+id/regButton"
+                android:text="Register Here"
+                android:layout_marginBottom="40dp"
+                android:background="@color/button"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"/>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
