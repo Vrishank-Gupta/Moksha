@@ -50,8 +50,31 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                new AlertDialog.Builder(HomeActivity.this)
+                        .setIcon(R.drawable.itemlogo)
+                        .setTitle("MOKSHA")
+                        .setMessage("CONTACT US\n")
+                        .setPositiveButton("YAMIN :9999132765", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String phone = "9999132765";
+                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                                startActivity(intent);
+
+                            }
+
+                        })
+                        .setNegativeButton("MAHIMA :9990891061", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String phone = "9990891061";
+                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                                startActivity(intent);
+                            }
+
+                        })
+                        .show();
             }
         });
 

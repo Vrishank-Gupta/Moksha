@@ -13,8 +13,10 @@ import tyrantgit.explosionfield.ExplosionField;
 
 public class explode extends AppCompatActivity {
 
+    ImageView a,b,c,d,e,f,g,h,i,j;
     ImageView k,l;
     FrameLayout fl;
+    RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class explode extends AppCompatActivity {
         l= (ImageView) findViewById(R.id.nsitfirst);
         fl= (FrameLayout) findViewById(R.id.first);
 
-
+rl= (RelativeLayout) findViewById(R.id.relative);
 
         k.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,125 @@ public class explode extends AppCompatActivity {
         });
 
 
+        a= (ImageView) findViewById(R.id.imageView3);
+        b= (ImageView) findViewById(R.id.imageView4);
+        c= (ImageView) findViewById(R.id.imageView5);
+        d= (ImageView) findViewById(R.id.imageView6);
+        e= (ImageView) findViewById(R.id.imageView7);
+        f= (ImageView) findViewById(R.id.imageView8);
+        g= (ImageView) findViewById(R.id.imageView9);
+        h= (ImageView) findViewById(R.id.imageView10);
+        i= (ImageView) findViewById(R.id.imageView11);
+        j= (ImageView) findViewById(R.id.imageView12);
+
+
+        a.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(a);
+            }
+        });
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(b);
+            }
+        });
+
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(c);
+            }
+        });
+
+        d.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(d);
+            }
+        });
+
+        e.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(e);
+            }
+        });
+
+        f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(f);
+            }
+        });
+
+        g.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(g);
+            }
+        });
+
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(h);
+            }
+        });
+
+        i.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(i);
+            }
+        });
+
+        j.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(j);
+            }
+        });
+
+        rl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+                explosionField.explode(rl);
+            }
+        });
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                a.performClick();
+                b.performClick();
+                c.performClick();
+                d.performClick();
+                e.performClick();
+                f.performClick();
+                g.performClick();
+                h.performClick();
+                i.performClick();
+                j.performClick();
+rl.performClick();
+            }
+        }, 3500);
+
+
 
 
         new Handler().postDelayed(new Runnable() {
@@ -64,15 +185,15 @@ public class explode extends AppCompatActivity {
                 l.performClick();
                 fl.performClick();
             }
-        }, 1500);
+        }, 2000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(explode.this,explode2.class));
-                finish();
+               startActivity(new Intent(explode.this,HomeActivity.class));
             }
-        }, 2500);
+        }, 4500);
+
 
     }
 }
