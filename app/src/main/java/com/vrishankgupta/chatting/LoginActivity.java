@@ -20,8 +20,7 @@ import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 public class LoginActivity extends AppCompatActivity {
 
-    GoogleSignInButton btnGoogle;
-    RelativeLayout activity_login;
+    ImageView btnGoogle;
     private static int SIGN_IN_REQUEST_CODE = 1;
 
 
@@ -32,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
             AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    Snackbar.make(activity_login,"You have been signed out.", Snackbar.LENGTH_SHORT).show();
                 }
             });
         }
@@ -47,12 +45,10 @@ public class LoginActivity extends AppCompatActivity {
         {
             if(resultCode == RESULT_OK)
             {
-                Snackbar.make(activity_login,"Successfully signed in.Welcome!", Snackbar.LENGTH_SHORT).show();
                 startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                 finish();
             }
             else{
-                Snackbar.make(activity_login,"We couldn't sign you in.Please try again later", Snackbar.LENGTH_SHORT).show();
                 finish();
             }
         }
@@ -71,8 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        btnGoogle = (GoogleSignInButton) findViewById(R.id.btnGoogleLogin);
-        activity_login = (RelativeLayout)findViewById(R.id.activity_login);
+        btnGoogle = (ImageView) findViewById(R.id.btnGoogleLogin);
 
 
 
@@ -86,7 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Snackbar.make(activity_login,"Welcome "+FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
                     //Load content
                     startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     finish();

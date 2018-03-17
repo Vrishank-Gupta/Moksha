@@ -65,6 +65,12 @@ public class ChatMainActivity extends AppCompatActivity {
                 }
             });
         }
+
+        if(item.getItemId()==R.id.action_settings)
+        {
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+            finish();
+        }
         return true;
     }
 

@@ -15,6 +15,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:src="@drawable/home_icon" />
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/nsit_logo" />
 
         <ImageView
             android:id="@+id/sign_out_icon"

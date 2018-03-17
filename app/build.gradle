@@ -26,11 +26,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:25.0.1'
+    implementation 'com.android.support:appcompat-v7:25.4.0'
     testCompile 'junit:junit:4.12'
 
     //Add Library
-    implementation 'com.android.support:design:25.1.0'
+    implementation 'com.android.support:design:25.4.0'
     implementation 'com.firebaseui:firebase-ui:0.6.2'
 
     implementation 'com.github.hani-momanii:SuperNova-Emoji:1.0'
@@ -40,12 +40,13 @@ dependencies {
 
     implementation 'com.journeyapps:zxing-android-integration:2.0.1@aar'
 
-    implementation 'com.google.zxing:core:3.0.1'
+    implementation 'com.google.zxing:core:3.3.0'
     implementation 'com.shobhitpuri.custombuttons:google-signin:1.0.0'
     implementation 'com.shamanland:facebook-like-button:0.1.8'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.markushi:circlebutton:1.1'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    compile 'tyrantgit:explosionfield:1.0.1'
 }
 apply plugin: 'com.google.gms.google-services'
