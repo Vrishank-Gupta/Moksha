@@ -157,23 +157,34 @@ public class explode extends AppCompatActivity {
             }
         });
 
+        a.setVisibility(View.GONE);
+        b.setVisibility(View.GONE);
+        c.setVisibility(View.GONE);
+        d.setVisibility(View.GONE);
+        e.setVisibility(View.GONE);
+        f.setVisibility(View.GONE);
+        j.setVisibility(View.GONE);
+        rl.setVisibility(View.GONE);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                a.performClick();
-                b.performClick();
-                c.performClick();
-                d.performClick();
-                e.performClick();
-                f.performClick();
-                g.performClick();
-                h.performClick();
-                i.performClick();
-                j.performClick();
-                rl.performClick();
-            }
-        }, 2000);
+
+
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                a.performClick();
+//                b.performClick();
+//                c.performClick();
+//                d.performClick();
+//                e.performClick();
+//                f.performClick();
+//                g.performClick();
+//                h.performClick();
+//                i.performClick();
+//                j.performClick();
+//                rl.performClick();
+//            }
+//        }, 2000);
 
 
 

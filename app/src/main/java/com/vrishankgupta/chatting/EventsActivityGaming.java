@@ -51,6 +51,7 @@ public class EventsActivityGaming extends AppCompatActivity {
             }
         });
         seek.setVisibility(View.GONE);
+        seek.setClickable(false);
 
 //        seek.setOnClickListener(new View.OnClickListener() {
 //            @Override
