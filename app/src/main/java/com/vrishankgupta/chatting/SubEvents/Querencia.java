@@ -29,7 +29,7 @@ public class Querencia extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a = "http://nsitmoksha.com";
+                String a = "https://docs.google.com/forms/d/e/1FAIpQLScHyWudAgJoW-R_W6kkQd3vMOmdX9CDWL3GHMuElqc2bTycQA/viewform?usp=pp_url&entry.1480964841&entry.1263828920&entry.75924615";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

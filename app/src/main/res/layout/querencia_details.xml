@@ -65,11 +65,35 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:fontFamily="sans-serif"
-                android:text="Shatranj, the Chess Club of NSIT in association with Venatus presents QUERENCIA. A one of a kind blitz tournament that gives everybody a chance to show their intellectual prowess. Join us on March 15 at 10 am to participate."
+                android:text="Shatranj, the Chess Club of NSIT in association with Venatus presents QUERENCIA. A one of a kind blitz tournament that gives everybody a chance to show their intellectual prowess. Join us on March 28 at 10 am to participate."
                 android:textColor="@color/subtext_color"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
 
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:textColor="@color/white"
+                android:layout_marginTop="40dp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Rules And Guidelines"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sub_background"
+                android:textColor="@color/subtext_color"
+                android:padding="20dp"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="20dp"
+                android:text="1.Time controls for each player in a game of blitz chess are, according to FIDE, 5 minutes per player.\n\n2.Can be Sudden death, with no time increment per move.\n\n3.The play will be governed by the FIDE Laws of Chess.\n\n4.If a player makes an illegal move, the player's opponent may point it out and claim a win. \n\n5. In case of a dispute during a tournament, either player may stop the clock and call the arbiter to make a final and binding judgment.\n\n* On the spot registrations are allowed *"
                 />
 
 
@@ -109,7 +133,7 @@
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:fontFamily="sans-serif"
-                android:text="Time : 3:00Pm - 6:00Pm\nDate :28th March 2018\nVenue : Main Stage"
+                android:text="Time : 10:00AM\nDate :28th March 2018\nVenue : COE Block (Block-5), 3rd Floor"
                 />
 
             <Button

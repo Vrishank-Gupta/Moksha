@@ -91,9 +91,8 @@
             android:id="@+id/back_arrow"
             android:layout_width="70dp"
             android:layout_height="35dp"
-            android:layout_alignStart="@+id/querencia"
+            android:layout_alignStart="@+id/seek"
             android:layout_alignTop="@+id/imageView3"
-            android:layout_marginStart="32dp"
             android:src="@drawable/back_arrow_bold" />
 
 

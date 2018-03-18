@@ -54,7 +54,7 @@ public class Seek extends AppCompatActivity {
         regButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String a = "https://www.facebook.com/pg/VenatusNSIT/events/";
+                String a = "https://www.facebook.com/events/211865386225985/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(a));
                 startActivity(i);

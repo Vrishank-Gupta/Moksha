@@ -171,9 +171,9 @@ public class explode extends AppCompatActivity {
                 h.performClick();
                 i.performClick();
                 j.performClick();
-rl.performClick();
+                rl.performClick();
             }
-        }, 4000);
+        }, 2000);
 
 
 
@@ -192,7 +192,7 @@ rl.performClick();
             public void run() {
                startActivity(new Intent(explode.this,HomeActivity.class));
             }
-        }, 5000);
+        }, 3000);
 
 
     }
