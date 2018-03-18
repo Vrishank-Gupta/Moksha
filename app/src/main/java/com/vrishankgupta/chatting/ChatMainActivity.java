@@ -117,14 +117,11 @@ public class ChatMainActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
                 if(emojiconEditText.getText().toString().equals(""))
                 {
                     Toast.makeText(ChatMainActivity.this, "Enter Some message", Toast.LENGTH_SHORT).show();
                 }
-
                 else {
-
                     FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(emojiconEditText.getText().toString(),
                             FirebaseAuth.getInstance().getCurrentUser().getEmail()));
                     emojiconEditText.setText("");

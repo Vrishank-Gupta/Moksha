@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity
 
         android.app.FragmentManager fragmentManager = getFragmentManager();
         BlankFragment frag = new BlankFragment(getApplicationContext());
-        fragmentManager.beginTransaction().add(R.id.frame, frag).commit();
+        fragmentManager.beginTransaction().replace(R.id.frame, frag).commit();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
