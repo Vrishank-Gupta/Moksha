@@ -95,7 +95,7 @@ public class HomeActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             new AlertDialog.Builder(this)
-                    .setIcon(R.drawable.m)
+                    .setIcon(R.drawable.itemlogo)
                     .setTitle("MOKSHA")
                     .setMessage("Do You Want To Exit")
                     .setPositiveButton("YES", new DialogInterface.OnClickListener()

@@ -14,12 +14,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/nsit_logo"/>
+
             <ImageView
 
                 android:layout_width="400dp"
                 android:layout_height="300dp"
                 android:layout_gravity="center"
                 android:background="@drawable/mokshalogo"/>
+
+            </FrameLayout>
 
             <VideoView
                 android:layout_width="match_parent"
@@ -61,7 +73,7 @@
                     android:id="@+id/linear_layout_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/white"
+                    android:background="#1e253e"
                     android:visibility="visible">
 
                     <LinearLayout
@@ -76,7 +88,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -86,7 +98,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Days"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -103,7 +115,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -113,7 +125,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Hour"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -130,7 +142,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -140,7 +152,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Minute"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -157,7 +169,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="00"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="40dp"
                             android:textStyle="bold" />
 
@@ -167,7 +179,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="Second"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="@color/white"
                             android:textSize="20dp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -177,7 +189,7 @@
 
             <ImageView
                 android:layout_width="340dp"
-                android:layout_height="100dp"
+                android:layout_height="80dp"
                 android:background="@drawable/eventheading"/>
 
 
