@@ -69,114 +69,128 @@ public class explode extends AppCompatActivity {
         j= (ImageView) findViewById(R.id.imageView12);
 
 
-        a.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(a);
-            }
-        });
-
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(b);
-            }
-        });
-
-        c.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(c);
-            }
-        });
-
-        d.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(d);
-            }
-        });
-
-        e.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(e);
-            }
-        });
-
-        f.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(f);
-            }
-        });
-
-        g.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(g);
-            }
-        });
-
-        h.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(h);
-            }
-        });
-
-        i.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(i);
-            }
-        });
-
-        j.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(j);
-            }
-        });
-
-        rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
-                explosionField.explode(rl);
-            }
-        });
-
-
+//        a.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(a);
+//            }
+//        });
+//
+//        b.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(b);
+//            }
+//        });
+//
+//        c.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(c);
+//            }
+//        });
+//
+//        d.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(d);
+//            }
+//        });
+//
+//        e.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(e);
+//            }
+//        });
+//
+//        f.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(f);
+//            }
+//        });
+//
+//        g.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(g);
+//            }
+//        });
+//
+//        h.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(h);
+//            }
+//        });
+//
+//        i.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(i);
+//            }
+//        });
+//
+//        j.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(j);
+//            }
+//        });
+//
+//        rl.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ExplosionField explosionField=ExplosionField.attach2Window(explode.this);
+//                explosionField.explode(rl);
+//            }
+//        });
 
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                a.performClick();
-                b.performClick();
-                c.performClick();
-                d.performClick();
-                e.performClick();
-                f.performClick();
-                g.performClick();
-                h.performClick();
-                i.performClick();
-                j.performClick();
-                rl.performClick();
-            }
-        }, 2000);
+
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                a.performClick();
+//                b.performClick();
+//                c.performClick();
+//                d.performClick();
+//                e.performClick();
+//                f.performClick();
+//                g.performClick();
+//                h.performClick();
+//                i.performClick();
+//                j.performClick();
+//                rl.performClick();
+//            }
+//        }, 2000);
+
+
+        a.setVisibility(View.GONE);
+        b.setVisibility(View.GONE);
+        c.setVisibility(View.GONE);
+        d.setVisibility(View.GONE);
+        e.setVisibility(View.GONE);
+        f.setVisibility(View.GONE);
+        g.setVisibility(View.GONE);
+        h.setVisibility(View.GONE);
+        i.setVisibility(View.GONE);
+        j.setVisibility(View.GONE);
+        rl.setVisibility(View.GONE);
+
 
 
 
@@ -188,7 +202,7 @@ public class explode extends AppCompatActivity {
                 l.performClick();
                 fl.performClick();
             }
-        }, 2000);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -196,7 +210,7 @@ public class explode extends AppCompatActivity {
                startActivity(new Intent(explode.this,HomeActivity.class));
                finish();
             }
-        }, 3000);
+        }, 2500);
 
 
     }
