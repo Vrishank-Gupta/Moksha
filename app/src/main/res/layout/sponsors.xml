@@ -2,7 +2,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1e253e"
+    android:background="@color/sponsi"
     >
 
     <RelativeLayout
@@ -24,8 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="0dp"
         android:layout_height="wrap_content">
 
         <ImageView
