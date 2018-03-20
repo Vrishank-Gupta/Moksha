@@ -24,6 +24,8 @@ public class Seek extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seek_details);
         regButton = (Button) findViewById(R.id.regButton);
+        regButton.setVisibility(View.GONE);
+        regButton.setClickable(false);
 
         ImageView signOut,homeIcon;
         signOut = (ImageView) findViewById(R.id.sign_out_icon);

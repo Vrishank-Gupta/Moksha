@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.firebase:firebase-crash:9.8.0'
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -32,6 +33,7 @@ dependencies {
     //Add Library
     implementation 'com.android.support:design:25.4.0'
     implementation 'com.firebaseui:firebase-ui:0.6.2'
+    implementation 'com.google.firebase:firebase-core:9.8.0'
 
     implementation 'com.github.hani-momanii:SuperNova-Emoji:1.0'
 

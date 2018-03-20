@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:fontFamily="monospace"
+                android:fontFamily="cursive"
                 android:textColor="@color/subtext_color"
                 android:textSize="20sp"
                 android:text="किस्सा शब्दों का"

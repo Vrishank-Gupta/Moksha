@@ -30,6 +30,7 @@
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
             android:src="@drawable/home_icon" />
 
         <ImageView
@@ -51,10 +52,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Act till you climax"
+                android:text="SLAM-ऐ-इश्क़"
+                android:fontFamily="sans-serif"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:fontFamily="sans-serif"
                 style="@style/Base.TextAppearance.AppCompat.Headline"
                 android:textStyle="bold"
                 android:textSize="30sp"
@@ -64,24 +65,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="cursive"
+                android:textColor="@color/subtext_color"
+                android:textSize="20sp"
+                android:text="Slam Poetry In Association with Free The Verse"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
                 android:fontFamily="sans-serif"
-                android:text="The amount of times that you say you hate drama is directly proportional to the amount of times you actually create it. ~ Random Drama Queen\n\nTheatreCon'18 provides you with the opportunity to be as random, creative, witty, quirky and out of box as you can and unleash the drama within you. We provide you with a plethora of events that you can choose from, a few of them being MONO ACTING, MAD-AD, RJ Hunt and what not.\nExperienced or not, we promise you a fun, a little silly, little inspirational but most of all an amazing time to all.\nThe best part, you can register on the spot. So, be there to have a crazy time and participate in some fun-filled events."
+                android:text="The power of which, cannot be described but only be felt.\n\nWe invite all the suckers for poetry out there, to come and feel this power of words with us.
+Let's play with them. Let's immerse ourselves in their magic. Let's find solace in them.
+Let's forget about the vacuity of life for a moment, and paint our hearts with several shades of emotions your words express.
+Come, let's share our stories.
+"
                 android:textColor="@color/subtext_color"
                 android:layout_marginTop="20dp"
                 android:textSize="20sp"
 
                 />
 
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:text="Rules and Regulations:"
                 android:textColor="@color/white"
-                android:layout_marginTop="40dp"
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
+                android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:text="Rules And Guidelines"
                 />
 
             <TextView
@@ -90,12 +107,11 @@
                 android:background="@color/sub_background"
                 android:textColor="@color/subtext_color"
                 android:padding="20dp"
-                android:textSize="20sp"
                 android:fontFamily="sans-serif"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
-                android:text="1.Participants will be allotted 5 minutes to prepare the act.\n\n2.Time limit is 1-3 minutes to perform their act.\n\n3.Theme would be given on the spot.\n\n4.Obscenity and offensive gestures are strictly not allowed."
+                android:text="1.Each participant has to fill the registration form after which a preliminary shortlisting will be done based on the written content.\n\n2.The shortlisted participants will have to perform at Moksha'18, NSIT on 27th March'18.\n\n3.The time limit for one participant is 5 minutes exceeding which can result in negative marking.\n\n4.No Language Barrier.\n\n5.Plagiarism will not be tolerated"
                 />
-
 
 
 
@@ -108,7 +124,7 @@
                 android:fontFamily="sans-serif"
                 android:textStyle="bold"
                 android:gravity="center"
-                android:text="Contact for Queries:"/>
+                android:text="अधिक जानकारी के लिए संपर्क करें:"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -117,10 +133,10 @@
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:fontFamily="sans-serif"
                 android:textSize="20sp"
+                android:fontFamily="sans-serif"
                 android:textColor="@color/subtext_color"
-                android:text="Apoorva Bhagat - 8860576784\nShruti Batra - 8826807049"
+                android:text="Jitendriya Das - 9910220334\nPranjay Rana - 9911379200"
                 />
 
 
@@ -130,17 +146,16 @@
                 android:gravity="center"
                 android:layout_marginTop="40dp"
                 android:padding="10dp"
+                android:fontFamily="sans-serif"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:fontFamily="sans-serif"
-                android:text="Time : 12:00pm\nDate : 27th March 2018\nVenue : Mini Zayca"
+                android:text="Time : 1:00pm to 4:00pm\nDate : 27th March 2018\nVenue : Mini Audi"
                 />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
-                android:visibility="invisible"
                 android:id="@+id/regButton"
                 android:text="Register Here"
                 android:layout_marginBottom="40dp"

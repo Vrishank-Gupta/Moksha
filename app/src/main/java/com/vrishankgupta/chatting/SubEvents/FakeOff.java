@@ -26,16 +26,19 @@ public class FakeOff extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fakeoff_details);
         regButton = (Button) findViewById(R.id.regButton);
+        regButton.setClickable(false);
+        regButton.setVisibility(View.GONE);
 
-        regButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String a = "http://nsitmoksha.com";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(a));
-                startActivity(i);
-            }
-        });
+
+//        regButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String a = "http://nsitmoksha.com";
+//                Intent i = new Intent(Intent.ACTION_VIEW);
+//                i.setData(Uri.parse(a));
+//                startActivity(i);
+//            }
+//        });
 
         ImageView signOut,homeIcon;
         signOut = (ImageView) findViewById(R.id.sign_out_icon);

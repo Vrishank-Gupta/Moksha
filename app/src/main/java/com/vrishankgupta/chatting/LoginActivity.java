@@ -1,22 +1,23 @@
 package com.vrishankgupta.chatting;
 
+import android.Manifest;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.shobhitpuri.custombuttons.GoogleSignInButton;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -75,9 +76,50 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+                int perm = ContextCompat.checkSelfPermission(
+                        LoginActivity.this,
+                        Manifest.permission.CAMERA);
+
+                if (perm == PackageManager.PERMISSION_GRANTED) {
+
+                    if(FirebaseAuth.getInstance().getCurrentUser() == null)
+                    {
+                        startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
+
+                    }
+                    else
+                    {
+                        //Load content
+                        startActivity(new Intent(LoginActivity.this,HomeActivity.class));
+                        finish();
+                    }
+
+                } else {
+                    ActivityCompat.requestPermissions(
+                            LoginActivity.this,
+                            new String[] {Manifest.permission.CAMERA},
+                            44
+                    );
+                }
+
+
+            }
+        });
+
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == 44)
+        {
+            if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+
                 if(FirebaseAuth.getInstance().getCurrentUser() == null)
                 {
                     startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
+
                 }
                 else
                 {
@@ -85,8 +127,10 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     finish();
                 }
-            }
-        });
 
+        }
+
+        else
+            Toast.makeText(this, "This Permission is Required", Toast.LENGTH_SHORT).show();
     }
 }
