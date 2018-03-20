@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:background="#1e253e"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,6 +18,7 @@
             android:text="Next"
             android:textColor="@color/white"
             android:textSize="12sp" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -61,9 +63,9 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:layout_alignParentStart="true"
             android:layout_below="@id/imageView2"
             android:layout_marginTop="40dp"
-            android:layout_alignParentStart="true"
             android:src="@drawable/automobile_image" />
 
 
@@ -79,9 +81,9 @@
             android:id="@+id/sign_out_icon"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
             android:layout_alignBottom="@+id/home_icon"
             android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
             android:src="@drawable/sign_out" />
 
         <ImageView
@@ -101,17 +103,38 @@
             android:layout_marginStart="35dp"
             android:src="@drawable/back_arrow_bold" />
 
-            <ImageView
-                android:id="@+id/motorsport"
-                android:layout_width="220dp"
-                android:layout_height="80dp"
-                android:layout_below="@id/imageView3"
-                android:scaleType="fitXY"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:src="@drawable/motorsport" />
+        <ImageView
+            android:id="@+id/motorsport"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_below="@id/imageView3"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/motorsport" />
 
+        <ImageView
+            android:id="@+id/ares"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_alignStart="@id/motorsport"
+            android:layout_below="@id/motorsport"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ares" />
 
+        <ImageView
+            android:id="@+id/bhr"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_alignStart="@id/motorsport"
+            android:layout_below="@id/ares"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bhr" />
 
 
     </RelativeLayout>

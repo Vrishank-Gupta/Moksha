@@ -24,7 +24,6 @@ import java.util.Date;
 /**
  * A simple {@link Fragment} subclass.
  */
-@SuppressLint("ValidFragment")
 public class BlankFragment extends Fragment {
 
 

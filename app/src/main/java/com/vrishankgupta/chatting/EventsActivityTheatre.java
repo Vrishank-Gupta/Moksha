@@ -11,13 +11,14 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.vrishankgupta.chatting.SubEvents.ActTillYouClimax;
 import com.vrishankgupta.chatting.SubEvents.Parwaaz;
 import com.vrishankgupta.chatting.SubEvents.Soch;
 
 
 public class EventsActivityTheatre extends AppCompatActivity {
 
-    ImageView back_arrow,soch,parwaz;
+    ImageView back_arrow,soch,parwaz,act;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,7 @@ public class EventsActivityTheatre extends AppCompatActivity {
         back_arrow = (ImageView) findViewById(R.id.back_arrow);
         soch = (ImageView) findViewById(R.id.soch);
         parwaz = (ImageView) findViewById(R.id.parwaaz);
+        act = (ImageView) findViewById(R.id.act);
 
         ImageView signOut,homeIcon;
         signOut = (ImageView) findViewById(R.id.sign_out_icon);
@@ -42,6 +44,13 @@ public class EventsActivityTheatre extends AppCompatActivity {
                         finish();
                     }
                 });
+            }
+        });
+
+        act.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ActTillYouClimax.class));
             }
         });
 

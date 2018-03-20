@@ -118,15 +118,15 @@
             android:layout_marginTop="15dp"
             android:src="@drawable/aimbot" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/querencia"
             android:layout_below="@+id/aimbot"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="24dp"
-            android:text="SEEK'18(TEXT)"
             android:id="@+id/seek"
+            android:src="@drawable/seek"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
 

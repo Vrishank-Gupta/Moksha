@@ -15,12 +15,13 @@ import com.vrishankgupta.chatting.SubEvents.Afsaana;
 import com.vrishankgupta.chatting.SubEvents.Alfaaz;
 import com.vrishankgupta.chatting.SubEvents.Brahmastra;
 import com.vrishankgupta.chatting.SubEvents.Khayaal;
+import com.vrishankgupta.chatting.SubEvents.Shaam;
 import com.vrishankgupta.chatting.SubEvents.Verbum;
 
 
 public class EventsActivityLiterary extends AppCompatActivity {
 
-    ImageView front_arrow,back_arrow,alfaaz,khayal,verbum,afsaana,brahma;
+    ImageView front_arrow,back_arrow,alfaaz,khayal,verbum,afsaana,brahma,sham;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,17 @@ public class EventsActivityLiterary extends AppCompatActivity {
         verbum = (ImageView) findViewById(R.id.verbum);
         afsaana = (ImageView) findViewById(R.id.afsana);
         brahma = (ImageView) findViewById(R.id.brahma);
+        sham = (ImageView) findViewById(R.id.sham);
 
         ImageView signOut,homeIcon;
         signOut = (ImageView) findViewById(R.id.sign_out_icon);
         homeIcon = (ImageView) findViewById(R.id.home_icon);
+        sham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Shaam.class));
+            }
+        });
 
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override

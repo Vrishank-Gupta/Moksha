@@ -11,12 +11,14 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.vrishankgupta.chatting.SubEvents.Ares;
+import com.vrishankgupta.chatting.SubEvents.Bhr;
 import com.vrishankgupta.chatting.SubEvents.Motorsport;
 
 
 public class EventsActivityAutomobile extends AppCompatActivity {
 
-    ImageView front_arrow,back_arrow,motorsport;
+    ImageView front_arrow,back_arrow,motorsport,ares,bhr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class EventsActivityAutomobile extends AppCompatActivity {
         front_arrow = (ImageView) findViewById(R.id.front_arrow);
         back_arrow = (ImageView) findViewById(R.id.back_arrow);
         motorsport = (ImageView) findViewById(R.id.motorsport);
+        bhr = (ImageView) findViewById(R.id.bhr);
+        ares = (ImageView) findViewById(R.id.ares);
 
         front_arrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +44,21 @@ public class EventsActivityAutomobile extends AppCompatActivity {
                 
                 startActivity(new Intent(getApplicationContext(),EventsActivityFashion.class));
                 finish();
+            }
+        });
+
+        ares.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Ares.class));
+
+            }
+        });
+        bhr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Bhr.class));
+
             }
         });
 

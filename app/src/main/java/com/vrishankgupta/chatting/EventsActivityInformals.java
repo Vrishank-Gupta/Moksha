@@ -14,15 +14,17 @@ import com.google.android.gms.tasks.Task;
 import com.vrishankgupta.chatting.SubEvents.EveningBall;
 import com.vrishankgupta.chatting.SubEvents.FakeOff;
 import com.vrishankgupta.chatting.SubEvents.Kaleidoscope;
+import com.vrishankgupta.chatting.SubEvents.Karaoke;
 import com.vrishankgupta.chatting.SubEvents.Kismat;
 import com.vrishankgupta.chatting.SubEvents.Nishad;
 import com.vrishankgupta.chatting.SubEvents.OpenMic;
 import com.vrishankgupta.chatting.SubEvents.Paint;
+import com.vrishankgupta.chatting.SubEvents.SlamAIshq;
 
 
 public class EventsActivityInformals extends AppCompatActivity {
 
-    ImageView front_arrow,back_arrow,kismat,nishad,kaleidoscope,paint,open_mic,fake_off,evening_ball;
+    ImageView front_arrow,back_arrow,kismat,nishad,kaleidoscope,karaoke,paint,open_mic,fake_off,evening_ball,slam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +39,9 @@ public class EventsActivityInformals extends AppCompatActivity {
         open_mic = (ImageView) findViewById(R.id.open_mic);
         fake_off = (ImageView) findViewById(R.id.fake_off);
         evening_ball = (ImageView) findViewById(R.id.evening_ball);
+        slam = (ImageView) findViewById(R.id.slam);
 
+        karaoke = (ImageView) findViewById(R.id.karaoke);
         ImageView signOut,homeIcon;
         signOut = (ImageView) findViewById(R.id.sign_out_icon);
         homeIcon = (ImageView) findViewById(R.id.home_icon);
@@ -53,6 +57,21 @@ public class EventsActivityInformals extends AppCompatActivity {
                         finish();
                     }
                 });
+            }
+        });
+
+        slam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SlamAIshq.class));
+
+            }
+        });
+
+        karaoke.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Karaoke.class));
             }
         });
 

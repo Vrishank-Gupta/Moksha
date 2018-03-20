@@ -149,6 +149,15 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="10dp"
             android:src="@drawable/fakeoff" />
+        <ImageView
+            android:id="@+id/slam"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/fake_off"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/slam" />
 
 
         <ImageView
@@ -170,6 +179,18 @@
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:src="@drawable/evening_ball" />
+
+
+        <ImageView
+            android:id="@+id/karaoke"
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/evening_ball"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/karaoke" />
 
 
 

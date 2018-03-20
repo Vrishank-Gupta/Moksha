@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -113,9 +114,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        Log.e("Array",grantResults.length + "");
         if(requestCode == 44)
         {
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
 
                 if(FirebaseAuth.getInstance().getCurrentUser() == null)
                 {
