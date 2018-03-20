@@ -3,6 +3,7 @@ package com.vrishankgupta.chatting;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -119,14 +120,18 @@ public class LoginActivity extends AppCompatActivity {
                 if(FirebaseAuth.getInstance().getCurrentUser() == null)
                 {
                     startActivityForResult(AuthUI.getInstance().createSignInIntentBuilder().build(),SIGN_IN_REQUEST_CODE);
-
                 }
+
+
                 else
                 {
-                    //Load content
                     startActivity(new Intent(LoginActivity.this,HomeActivity.class));
                     finish();
                 }
+
+            else if (Build.VERSION.SDK_INT >= 23 && !shouldShowRequestPermissionRationale(permissions[0])) {
+                Toast.makeText(LoginActivity.this, "Go to Settings and Grant the permission to use this feature.", Toast.LENGTH_SHORT).show();
+            }
 
         }
 

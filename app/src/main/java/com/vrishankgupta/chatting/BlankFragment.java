@@ -34,6 +34,9 @@ public class BlankFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public BlankFragment() {
+    }
+
     private String EVENT_DATE_TIME = "2018-03-26 08:59:59";
     private String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
     private LinearLayout linear_layout_1, linear_layout_2;

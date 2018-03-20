@@ -23,6 +23,8 @@ public class mokshamap extends Fragment {
         // Required empty public constructor
     }
 
+    public mokshamap() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
