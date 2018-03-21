@@ -48,8 +48,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignEnd="@+id/textView2"
             android:layout_below="@+id/sign_out_icon"
             android:src="@drawable/moksha_logo" />

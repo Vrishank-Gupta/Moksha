@@ -16,7 +16,8 @@
             android:layout_below="@+id/front_arrow"
             android:text="Next"
             android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:id="@+id/textView4" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -34,15 +35,16 @@
             android:layout_alignStart="@+id/sign_out_icon"
             android:text="Sign Out"
             android:textColor="@color/white"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:id="@+id/textView3" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_below="@+id/sign_out_icon"
-            android:layout_marginStart="19dp"
-            android:layout_toEndOf="@+id/back_arrow"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignStart="@+id/front_arrow"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_marginStart="14dp"
             android:src="@drawable/moksha_logo" />
 
         <ImageView
