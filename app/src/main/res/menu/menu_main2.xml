@@ -3,17 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.shivam.moksha.Main2Activity">
 
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="Home"
-        app:showAsAction="never" />
-
     <item android:title="Signout" app:showAsAction="never"
         android:id="@+id/menu_sign_out"/>
 
-
-
-
+    <item
+        android:id="@+id/action_settings"
+        android:title="Home"
+        app:showAsAction="never" />
 
 </menu>
